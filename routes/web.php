@@ -1,14 +1,17 @@
 <?php
-
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
-Route::get('/', function () {
-    return view('welcome');
-});
+use Illuminate\Support\Facades\Route;
 
-route::get('/', [HomeController::class, 'my_home']);
+Route::get('/', [HomeController::class, 'my_home']); // Utilisation d'une seule route pour '/'
+Route::get('/home', [HomeController::class, 'index']);
+Route::get('/add_food', [AdminController::class, 'add_food']);
+Route::post('/upload_food', [AdminController::class, 'upload_food']);
+Route::get('/view_food', [AdminController::class, 'view_food']);
+Route::get('/delete_food/{id}', [AdminController::class, 'delete_food']);
+Route::get('/update_food/{id}', [AdminController::class, 'update_food']);
+Route::post('/edite_food', [AdminController::class, 'upload_food']);
 
-route::get('/home',[HomeController::class, 'index']);
 
 Route::middleware([
     'auth:sanctum',

@@ -8,6 +8,10 @@ use App\Models\User;
 
 class HomeController extends Controller
 {
+    public function my_home()
+    {
+        return view ('home.index');
+    }
     public function index()
     {
         if (Auth::id()) 
@@ -20,7 +24,7 @@ class HomeController extends Controller
            
             } else {
            
-                return view('dashboard');
+                return view('home.index');
            
             } 
        
