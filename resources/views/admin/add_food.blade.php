@@ -23,7 +23,7 @@
         <div class="page-header">
           <div class="container-fluid">
 
-          <form action="{{ url('edite_food') }}" method="POST">
+          <form action="{{ url('upload_food') }}" method="POST" enctype="multipart/form-data">
 
             @csrf
 

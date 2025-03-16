@@ -14,19 +14,25 @@ class AdminController extends Controller
     public function upload_food(Request $request)
     {
         $food = new Food;
-        
-        $food ->name = $request->name;
-        
-        $food ->price = $request->price;
-        
-        $food ->description = $request->description;
-        
-        $food ->image = $request->image;
+    
+        $food->name = $request->name;
+        $food->price = $request->price;
+        $food->description = $request->description;
 
+        $image=$request->image;
+        if($image)
+        {
+            $imagename=time().'.'.$image->getClientOriginalExtension();
+            $request->image->move('food_img',$imagename);
+            $food->image =$imagename;
+        }   
         $food->save();
 
-        return redirect()->back();
+        $food->save();
+    
+        return redirect()->back()->with('success', 'Plat ajouté avec succès');
     }
+    
 
 
     public function view_food()
@@ -49,19 +55,28 @@ class AdminController extends Controller
 
     }
 
-    public function edite_food(Request $request, $id)
+    public function edit_food(Request $request, $id)
     {
-        $food =Food::find($id);
-        
-        $food ->name = $request->name;
-        
-        $food ->price = $request->price;
-        
-        $food ->description = $request->description;
-        
-        $food->save();
+        $food = Food::find($id);
+    
+        $food->name = $request->name;
 
-        return redirect()->back();
+        $food->price = $request->price;
+
+        $food->description = $request->description;
+    
+        $image = $request->image;
+
+        if($image)
+        {
+            $imagename=time().'.'.$image->getClientOriginalExtension();
+            $request->image->move('food_img',$imagename);
+            $food->image =$imagename;
+        }   
+        $food->save();
+    
+        return redirect('view_food')->with('success', 'Plat modifié avec succès');
     }
+    
 }
 
