@@ -6,7 +6,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'my_home']); // Utilisation d'une seule route pour '/'
 Route::get('/home', [HomeController::class, 'index']);
 Route::post('/add_cart/{id}', [HomeController::class, 'add_cart']);
+Route::get('/my_cart', [HomeController::class, 'my_cart']);
+Route::get('/remove_cart/{id}', [HomeController::class, 'remove_cart']);
+Route::post('/confirm_order', [HomeController::class, 'confirm_order']);
+Route::post('/book_table', [HomeController::class, 'book_table']);
 
+
+
+
+Route::get('/orders', [AdminController::class, 'orders']);
+Route::get('/on_the_way/{id}', [AdminController::class, 'on_the_way']);
+Route::get('/delivered/{id}', [AdminController::class, 'delivered']);
+Route::get('/canceled/{id}', [AdminController::class, 'canceled']);
+Route::get('/reservations', [AdminController::class, 'reservations']);
+Route::get('/paymentStatus/{id}', [AdminController::class, 'paymentStatus'])->name('paymentStatus');
+Route::get('/recettesJournalieres', [AdminController::class, 'recettesJournalieres']);
+Route::get('/FoodByCatByMounth', [AdminController::class, 'FoodByCatByMounth']);
+Route::get('/ordersbymounth', [AdminController::class, 'ordersbymounth']);
 
 
 

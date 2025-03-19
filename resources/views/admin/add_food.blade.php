@@ -28,8 +28,8 @@
             @csrf
 
                 <div class="div_deg">
-                    <label for="name">Nom du plat</label>
-                    <input type="text" name="name" id="name" required>
+                    <label for="name_food">Nom du plat</label>
+                    <input type="text" name="name_food" id="name_food" required>
                 </div>
 
                 <div class="div_deg">

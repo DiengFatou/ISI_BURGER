@@ -9,9 +9,15 @@ class Food extends Model
 {
     use  HasFactory;
     protected $fillable = [
-        'name',
+        'name_food',
         'price',
         'description',
         'image',
-    ];   
+    ]; 
+    
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class);
+    }
+
 }

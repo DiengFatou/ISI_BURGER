@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
+            $table->string('name_food')->nullable();
             $table->longText('description')->nullable();
             $table->string('price')->nullable();
             $table->string('quantity')->nullable();

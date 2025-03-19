@@ -27,8 +27,8 @@
             <form action="{{ url('edit_food', $food->id) }}" method="post" enctype="multipart/form-data">
            @csrf
             <div class="div_deg">
-                    <label for="name">Nom du plat</label>
-                    <input type="text" name="name" id="name" value="{{ $food->name }}" required>
+                    <label for="name_food">Nom du plat</label>
+                    <input type="text" name="name_food" id="name_food" value="{{ $food->name_food }}" required>
                     
                 </div>
 

@@ -30,6 +30,10 @@
 
                 @auth
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('my_cart') }}">Panier</a>
+                    </li>
+
                     <form action="{{ route('logout') }}" method="Post">
                         @csrf
                          <input class="btn btn-primary ml-xl-4" type="submit" value="Deconnexion">
