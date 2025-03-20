@@ -23,13 +23,13 @@
         <div class="page-header">
           <div class="container-fluid">
 
-          <form action="{{ url('edite_food') }}" method="POST">
+          <form action="{{ url('upload_food') }}" method="POST" enctype="multipart/form-data">
 
             @csrf
 
                 <div class="div_deg">
-                    <label for="name">Nom du plat</label>
-                    <input type="text" name="name" id="name" required>
+                    <label for="name_food">Nom du plat</label>
+                    <input type="text" name="name_food" id="name_food" required>
                 </div>
 
                 <div class="div_deg">

@@ -56,15 +56,13 @@
                             @foreach ( $foods as $food )
                             
                             <tr>
-                                <td>{{ $food->name }}</td>
+                                <td>{{ $food->name_food }}</td>
                                 <td>{{ $food->price }}</td>
                                 <td>{{ $food->description }}</td>
                                 <td><img src="{{ url('food_img/' . $food->image) }}"
-                                 alt="Image de {{ $food->name }}" width="80"></td>
+                                 alt="Image de {{ $food->name_food }}" width="80"></td>
                                  <td>
-                                    <a class="btn btn-warning" onclick="return 
-                                    confirm('Voulez vous modifier ce plat')" 
-                                    href="{{ url('update_food', $food->id) }}">Modifier</a>
+                                    <a onclick="return confirm('Etes vous sur de vouloir supprimer ce plat ?')" class="btn btn-warning" href="{{ url('update_food', $food->id) }}">Modifier</a>
                                
                                 </td>
                                  <td>

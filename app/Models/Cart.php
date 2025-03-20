@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Food extends Model
+class Cart extends Model
 {
     use  HasFactory;
     protected $fillable = [
@@ -13,11 +13,6 @@ class Food extends Model
         'price',
         'description',
         'image',
-    ]; 
-    
-    public function orders()
-    {
-        return $this->belongsToMany(Order::class);
-    }
-
+        'quantity',
+    ];   
 }
